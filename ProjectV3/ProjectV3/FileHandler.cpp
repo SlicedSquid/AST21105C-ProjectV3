@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream>
+#include <fstream.h>
 using namespace std;
 
 class fileHandler 
@@ -7,19 +7,19 @@ class fileHandler
 private:
 	string *reg = new string;
 public:
-	string *fileRead(string fileName, int line) 
+	string *fileRead(string fileName) 
 	{
+		string result;
 		istream input(fileName);
-		for (int i = 0; i < line; i++)
-		{
-			getline(input, reg);
-		}
+		input >> result;
 		input.close();
-		return reg;
+		return result;
 	}
-	void fileWrite() 
+	void fileWrite(string fileName, string content) 
 	{
-
-
+		ostream output;
+		output.open(fileName);
+		output << content;
+		output.close();
 	}
 };
