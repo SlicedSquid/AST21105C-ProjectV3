@@ -1,4 +1,13 @@
-#include <iostream>
-using namespace std;
+#include "LoanControl.h"
 
-//do what you want
+bool loanControl::check(users a, equipments b)
+{
+	if (a.getStatus()&&b.getStatus())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
