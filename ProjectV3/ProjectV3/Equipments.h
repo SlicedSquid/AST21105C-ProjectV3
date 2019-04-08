@@ -1,5 +1,8 @@
-#include <iostream>
 #ifndef EQUIPMENT_H
+#define EQUIPMENT_H
+#include <iostream>
+using namespace std;
+
 class equipments
 {
 private:
@@ -22,8 +25,8 @@ public:
 class stove : public equipments
 {
 private:
-	string type;	// Stove Type (ultralight, lightweight, and table)
-	int fuelType;	// Fuel Type (stove gas, screw headed gas, and wax)
+	string stoveType;	// Stove Type (ultralight, lightweight, and table)
+	string fuelType;	// Fuel Type (stove gas, screw headed gas, and wax)
 public:
 	virtual void displayB();	// Display basic information
 	virtual void displayA();	// Display attribute
@@ -32,8 +35,8 @@ public:
 class lantern : public equipments
 {
 private:
-	string size;		// Lantern Size (hiking or camping)
-	string type;		// Lantern Type (head lamp, table lamp, led lamp, and beam lamp)
+	string lanternSize;	// Lantern Size (hiking or camping)
+	string lanternType;	// Lantern Type (head lamp, table lamp, led lamp, and beam lamp)
 	string fuelType;	// Fuel Type (AAbatteries, AAA batteries, C batteries, D batteries, stove gas and screw headed gas)
 public:
 	virtual void displayB();	// Display basic information
@@ -43,13 +46,14 @@ public:
 class tent : public equipments
 {
 private:
-	int size[6] = { 2, 4, 6, 8, 10, 16 };		// # of ppl use (2, 4, 6, 8, 10, and 16)
-	string tentType;								// Tent Type (lightweight, family, wall, tunnel, or dome)
-	int numberOfDoors[3] = { 1, 2, 4 };			// # of doors (1, 2, and 4)
-	bool doubleLayer;							// Double-layer? (true / false)
-	string colour;
+	int tentSize;		// # of ppl use (2, 4, 6, 8, 10, and 16)
+	string tentType;	// Tent Type (lightweight, family, wall, tunnel, or dome)
+	int numberOfDoors;	// # of doors (1, 2, and 4)
+	bool doubleLayer;	// Double-layer? (true / false)
+	string colour;		// Colour
 public:
 	virtual void displayB();	// Display basic information
 	virtual void displayA();	// Display attribute
 };
+
 #endif // !EQUIPMENT_H
