@@ -18,11 +18,15 @@ void equipments::displayB()
 
 bool equipments::returnStatus()
 {
-	return false;
+	if (status == "in")
+		return true;
+	else
+		return false;
 }
 
 void equipments::changeStatus(string s)
 {
+	status = s;
 }
 
 void stove::displayA()

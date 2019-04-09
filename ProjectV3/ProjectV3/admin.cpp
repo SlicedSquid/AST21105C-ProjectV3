@@ -73,34 +73,3 @@ int display() {
 
 }
 
-int main()
-{
-	
-	string username, password;
-
-	cout << "Welcome to camp equipment loan system!" << endl;
-	cout << "Please enter your name: ";
-	cin >> username;
-	cout << "Please enter your password: ";
-	cin >> password;
-
-	if (username == "admin" && password == "admin") {
-		cout << "login in succss" << endl;
-
-
-	}
-	else
-	{
-		cout << "Invalid user ID or password. Please try again." << endl;
-
-	}
-	
-	
-
-	ofstream output("record.txt");
-	output << username << " " << password << endl;
-	output.close();
-
-	system("pause");
-	return 0;
-}
