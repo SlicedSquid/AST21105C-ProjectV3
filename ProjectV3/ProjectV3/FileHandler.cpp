@@ -1,13 +1,14 @@
 #include <iostream>
+#include <string>
 #include <fstream.h>
 using namespace std;
 
 class fileHandler 
 {
 private:
-	string *reg = new string;
+	int counter;
 public:
-	string *fileRead(string fileName) 
+	string fileRead(string fileName) 
 	{
 		string result;
 		istream input(fileName);
@@ -21,5 +22,9 @@ public:
 		output.open(fileName);
 		output << content;
 		output.close();
+	}
+	void displayAvailableEquipments const()
+	{
+		string a = fileRead("camp_equipment.txt");
 	}
 };

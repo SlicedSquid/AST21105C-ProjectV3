@@ -6,6 +6,7 @@ using namespace std;
 
 void admin::displayAvailableEquipment() const
 {
+
 }
 
 void admin::displayLoanRecord(users a) const
