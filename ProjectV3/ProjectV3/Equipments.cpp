@@ -16,7 +16,7 @@ equipments::equipments(string _code, string _name, string _brand, string _type, 
 void equipments::displayB()
 {
 	cout << code << "|" << name << "|" << brand << "|" << type << "|"
-		 << date << "|" << condition << "|" << status << "|";
+		 << date << "|" << condition << "|" << status << endl;
 }
 
 bool equipments::returnStatus()

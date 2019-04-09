@@ -4,9 +4,37 @@ using namespace std;
 
 equipments fileHandler::creatEquipment(string reg)
 {
-	//将reg中的信息提取出来 存入一个equipments类型的data structrue中并返回
-	return equipments();
+	//获取reg中的信息，存入一个equipment类的数据结构并返回
+	//输入的值是这样的：T005|4 Persons Dome|Jackal|tent|25092012|good|in|2|dome|1|true|yellow
+	//然后信息就会被提取并存储
+	//TODO:简化 使之可以重复使用
+	int pos1, pos2, date;
+	string code, name, brand, type, condition, status, _date;
+	pos1 = reg.find("|", 0);
+	code = code.assign(reg, 0, pos1);
+	pos2 = reg.find("|", pos1+1);
+	name = name.assign(reg, pos1 + 1, pos2 - pos1 - 1);
+	pos1 = reg.find("|", pos2+1);
+	brand = brand.assign(reg, pos2 + 1, pos1 - pos2 - 1);
+	pos2 = reg.find("|", pos1+1);
+	type = type.assign(reg, pos1 + 1, pos2 - pos1 - 1);
+	pos1 = reg.find("|", pos2 + 1);
+	date = stoi(_date.assign(reg, pos2 + 1, pos1 - pos2 - 1));
+	pos2 = reg.find("|", pos1 + 1);
+	condition = condition.assign(reg, pos1 + 1, pos2 - pos1 - 1);
+	pos1 = reg.find("|", pos2 + 1);
+	status = status.assign(reg, pos2 + 1, pos1 - pos2 - 1);
+	pos2 = reg.find("|", pos1 + 1);
+	return equipments(code, name, brand, type, date, condition, status);
 }
+
+User fileHandler::creatUser(string reg)
+{
+	//获取reg中的信息，存入一个User类的数据结构并返回
+	return User();
+}
+
+
 
 void fileHandler::displayEquipmentList()
 {
@@ -43,7 +71,8 @@ void fileHandler::displayEquipmentList()
 			}
 			if (status && condition)
 			{
-				
+				equipments aE = creatEquipment(reg);
+				aE.displayB();
 			}
 		}
 	}
