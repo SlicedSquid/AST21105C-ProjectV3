@@ -2,18 +2,21 @@
 #include "Equipments.h"
 using namespace std;
 
-equipments::equipments()
+equipments::equipments(string _code, string _name, string _brand, string _type, int _date, string _condition, string _status)
 {
-}
-
-equipments::equipments(equipmentName)
-{
+	code = _code;
+	name = _name;
+	brand = _brand;
+	type = _type;
+	date = _date;
+	condition = _condition;
+	status = _status;
 }
 
 void equipments::displayB()
 {
 	cout << code << "|" << name << "|" << brand << "|" << type << "|"
-		 << date << "|" << condition << "|" << status << "|" << endl;
+		 << date << "|" << condition << "|" << status << "|";
 }
 
 bool equipments::returnStatus()

@@ -6,7 +6,7 @@ using namespace std;
 class equipments
 {
 private:
-	int code;			// Item code
+	string code;		// Item code
 	string name;		// Item name
 	string brand;		// Brand
 	string type;		// Equipment Type
@@ -14,9 +14,9 @@ private:
 	string condition;	// Condition
 	string status;		// Status
 public:
-	equipments();
-	equipments(equipmentName);
-	void displayB();	// Display basic information
+	equipments(string _code, string _name, string _brand, string _type, 
+			   int _date, string _condition, string _status);
+	void displayB();				// Display basic information
 	virtual void displayA() = 0;	// Display attribute
 	bool returnStatus();
 	void changeStatus(string s);
