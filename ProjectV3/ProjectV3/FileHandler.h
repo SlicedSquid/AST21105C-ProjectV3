@@ -4,13 +4,16 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Equipments.h"
 
 class fileHandler 
 {
 private:
 	istream input;
 public:
-	void displayEquipmentList() const;
+	equipments creatEquipment(string reg);
+	void displayEquipmentList();
+	bool login(string id, string password) const;
 };
 
 #endif // !FILEHANDLER_H

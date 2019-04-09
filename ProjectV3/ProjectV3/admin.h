@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #ifndef ADMIN_H 
+#define ADMIN_H
 class admin 
 {
 private:
