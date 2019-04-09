@@ -7,16 +7,17 @@ using namespace std;
 int getMainMenu()
 {
 	int choice;
-	cout << "-----------------------------------" << endl;
-	cout << "1.Display available camp equipments" << endl;
-	cout << "2.Display loan record" << endl;
-	cout << "3.Make equipment loan" << endl;
-	cout << "4.Return equipment" << endl;
-	cout << "5.Exit" << endl;
-	cout << "-----------------------------------"
-		cout << "Enter your choice:";
+	cout << "------------------------------------" << endl;
+	cout << "1) Display available camp equipments" << endl;
+	cout << "2) Display loan record" << endl;
+	cout << "3) Make equipment loan" << endl;
+	cout << "4) Return equipment" << endl;
+	cout << "5) Exit" << endl;
+	cout << "------------------------------------" << endl;
+	cout << "Please enter your choice: ";
 	cin >> choice;
 	return choice;
+	cout << "------------------------------------" << endl;
 }
 
 int main()
