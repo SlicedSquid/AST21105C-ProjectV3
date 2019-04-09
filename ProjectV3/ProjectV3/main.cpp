@@ -1,5 +1,6 @@
 #include <iostream>
 #include "users.h"
+#include "fileHandler.h"
 using namespace std;
 
 
@@ -22,6 +23,7 @@ int main()
 {
 	string userID, password;
 	admin administrator();
+	fileHandler fH();
 	loanControl lC();
 	cout << "Welcome to camp equipments borrow system!" << endl;
 	while ()
@@ -30,14 +32,14 @@ int main()
 		cin >> userID;
 		cout << "Please enter your password: ";
 		cin >> password;
-		if (administrator.login(userID, password);)
+		if (administrator.login(userID, password))
 		{
 			cout << "Login successed!" << endl;
 			users a(userID);
 			switch (getMainMenu())
 			{
 			case 1:
-				administrator.displayAvailableEquipment();
+				fH.displayEquipmentList();
 				break;
 			case 2:
 				administrator.displayLoanRecord(a);
@@ -57,8 +59,8 @@ int main()
 		else
 		{
 			cout >> "Invalid user ID or password. Please try again.";
-			continue;
 		}
-		system("pause");
-		return 0;
 	}
+	system("pause");
+	return 0;
+}
