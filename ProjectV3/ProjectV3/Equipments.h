@@ -16,8 +16,8 @@ private:
 public:
 	equipments();
 	equipments(equipmentName);
-	virtual void displayB();	// Display basic information
-	virtual void displayA();	// Display attribute
+	void displayB();	// Display basic information
+	virtual void displayA() = 0;	// Display attribute
 	bool returnStatus();
 	void changeStatus(string s);
 }
@@ -28,7 +28,6 @@ private:
 	string stoveType;	// Stove Type (ultralight, lightweight, and table)
 	string fuelType;	// Fuel Type (stove gas, screw headed gas, and wax)
 public:
-	virtual void displayB();	// Display basic information
 	virtual void displayA();	// Display attribute
 };
 
@@ -39,7 +38,6 @@ private:
 	string lanternType;	// Lantern Type (head lamp, table lamp, led lamp, and beam lamp)
 	string fuelType;	// Fuel Type (AAbatteries, AAA batteries, C batteries, D batteries, stove gas and screw headed gas)
 public:
-	virtual void displayB();	// Display basic information
 	virtual void displayA();	// Display attribute
 };
 
@@ -52,7 +50,6 @@ private:
 	bool doubleLayer;	// Double-layer? (true / false)
 	string colour;		// Colour
 public:
-	virtual void displayB();	// Display basic information
 	virtual void displayA();	// Display attribute
 };
 

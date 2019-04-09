@@ -13,7 +13,7 @@ equipments::equipments(equipmentName)
 void equipments::displayB()
 {
 	cout << code << "|" << name << "|" << brand << "|" << type << "|"
-		 << date << "|" << condition << "|" << status << "|";
+		 << date << "|" << condition << "|" << status << "|" << endl;
 }
 
 bool equipments::returnStatus()
