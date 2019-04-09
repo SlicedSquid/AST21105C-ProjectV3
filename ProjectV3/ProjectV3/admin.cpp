@@ -3,7 +3,11 @@
 #include <iostream>
 using namespace std;
 
-int display() {
+int admin()
+{
+	ifstream myfile;	
+	myfile.open("camp_equiment.txt");
+
 	string thing;
 	string date;
 	string campname;
@@ -20,56 +24,59 @@ int display() {
 	string  tent;
 	string lantern;
 	string stoves;
+
+	if (myfile.is_open())
+	{	
+		while (!myfile.eof())
+		{
+			myfile >> thing;
+			cout << thing << endl;
+
+			myfile >> campname;
+			cout << campname << endl;
+			myfile >> name;
+			cout << name << endl;
+			myfile >> itemname;
+			cout << itemname << endl;
+			myfile >> itemid;
+			cout << itemid << endl;
+			myfile >> itemstatus1;
+			cout << itemstatus1 << endl;
+			myfile >> itemstatus2;
+			cout << itemstatus2 << endl;
+			myfile >> itemnum;
+			cout << itemnum << endl;
+			myfile >> classofitem;
+			cout << classofitem << endl;
+		}
+		myfile.close();
+	}
+
+	ifstream myfile;
+	myfile.open("user.txt");
+
 	string campid;
 	string borrower;
 	string boid;
 	string address;
 	string level;
 
-	ifstream myfile("D:\\camp_equiment.txt");
 	if (myfile.is_open())
 	{
-		while (myfile.good())
+		while (!myfile.eof())
 		{
-			getline(myfile, thing);
-			cout << thing << endl;
-			getline(myfile, campname);
-			cout << campname << endl;
-			getline(myfile, name);
-			cout << name << endl;
-			getline(myfile,itemname );
-			cout << itemname << endl;
-			getline(myfile, itemid);
-			cout << itemid << endl;
-			getline(myfile, itemstatus1);
-			cout << itemstatus1 << endl;
-			getline(myfile, itemstatus2);
-			cout << itemstatus2 << endl;
-			getline(myfile, itemnum);
-			cout << itemnum << endl;
-			getline(myfile, classofitem);
-			cout << classofitem << endl;
-		}
-		myfile.close();
-	}
-	ifstream myfile("D:\\user.txt");
-	if (myfile.is_open())
-	{
-		while (myfile.good())
-		{
-			getline(myfile, campid);
+			myfile >> campid;
 			cout << campid << endl;
-			getline(myfile, borrower);
+			myfile >> borrower;
 			cout << borrower << endl;
-			getline(myfile, boid);
+			myfile >> boid;
 			cout << boid << endl;
-			getline(myfile, address);
+			myfile >> address;
 			cout << address << endl;
-			getline(myfile, level);
+			myfile >> level;
 			cout << level << endl;
 		}
 		myfile.close();
 	}
 
 }
-
