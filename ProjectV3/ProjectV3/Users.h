@@ -9,12 +9,15 @@ protected:
 	string Name;
 	string Section;
 	string Address;
+	string password;
 	int DateOfBirth;
 public:
 	string getName();
 	string getId();
 	string getSection();
 	string getAddress();
+	void setId(string id);
+	void setPassword(string password);
 	int getDateOfBirth();
 	User();
 	User(string _Id, string _Name, string _Section, string _Address, int _DateOfBirth);

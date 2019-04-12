@@ -1,5 +1,7 @@
 #include<iostream>
 #include "groupproject.h"
+#include "Users.h"
+#include "FileHandler.h"
 using namespace std;
 
 string User::getName() {
@@ -17,6 +19,17 @@ string User::getSection() {
 string User::getAddress() {
 	return Address;
 }
+
+void User::setId(string id)
+{
+	this->Id = id;
+}
+
+void User::setPassword(string password)
+{
+	this->password = password;
+}
+
 
 int User::getDateOfBirth() {
 	return DateOfBirth;

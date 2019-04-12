@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+
 equipments fileHandler::creatEquipment(string reg)
 {
 	//获取reg中的信息，存入一个equipment类的数据结构并返回
@@ -28,10 +30,13 @@ equipments fileHandler::creatEquipment(string reg)
 	return equipments(code, name, brand, type, date, condition, status);
 }
 
-User fileHandler::creatUser(string reg)
+*User fileHandler::creatUser(string reg)
 {
+	User* user = new user();
+	string name, section, address;
+	int birth, pos1, pos2;
 	//获取reg中的信息，存入一个User类的数据结构并返回
-	return User();
+	return user;
 }
 
 
@@ -78,11 +83,35 @@ void fileHandler::displayEquipmentList()
 	}
 }
 
-bool fileHandler::login(string id, string password) const
+bool fileHandler::login(User* user) const
 {
+	int c1, c2;
 	string reg;
-	do
+	while (true)
 	{
-		getline(input,reg);
-	} while (reg.length()==0);
+		do
+		{
+			getline(input, reg);
+		} while (reg.length() == 0);
+		if (input.eof())
+		{
+			return false;
+		}
+		c1 = reg.find("|", 0);
+		c2 = reg.find("|", c1 + 1);
+		if (reg.assign(reg, c1 + 1, c2 - 1) == user->getId())
+		{
+			c1 = reg.find("|", c2 + 1);
+			c2 = reg.find("|", c1 + 1);
+			if (reg.assign(reg, c1 + 1, c2 - 1) == user->getPassword())
+			{
+				user = creatUser(reg);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
 }

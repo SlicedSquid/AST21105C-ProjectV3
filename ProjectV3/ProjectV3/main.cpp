@@ -29,7 +29,8 @@ int getMainMenu()
 
 int main()
 {
-	string userID, password;
+	User user* = new User;
+	string id, password;
 	admin administrator();
 	fileHandler fH();
 	loanControl lC();
@@ -37,13 +38,15 @@ int main()
 	while ()
 	{
 		cout << "Please enter user ID: ";
-		cin >> userID;
+		cin >> id;
 		cout << "Please enter password: ";
 		cin >> password;
-		if (administrator.login(userID, password))
+		user.setId(id);
+		user.setPassword(password);
+		if (fH.login(user))
 		{
 			cout << "You're successfully logged in." << endl;
-			users a(userID);
+			*user = fH.creatUser(userID);
 			switch (getMainMenu())
 			{
 			case 1:
