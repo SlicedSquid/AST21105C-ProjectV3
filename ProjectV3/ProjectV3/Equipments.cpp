@@ -27,9 +27,9 @@ bool equipments::returnStatus()
 		return false;
 }
 
-void equipments::changeStatus(string s)
+string equipments::returnName()
 {
-	status = s;
+	return name;
 }
 
 void stove::displayA()

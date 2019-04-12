@@ -19,7 +19,7 @@ public:
 	void displayB();				// Display basic information
 	virtual void displayA() = 0;	// Display attribute
 	bool returnStatus();
-	void changeStatus(string s);
+	string returnName();
 }
 
 class stove : public equipments

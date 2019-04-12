@@ -10,6 +10,7 @@ equipments fileHandler::creatEquipment(string equipmentID)
 	//输入的值是这样的：T005|4 Persons Dome|Jackal|tent|25092012|good|in|2|dome|1|true|yellow
 	//然后信息就会被提取并存储
 	//TODO:简化 使之可以重复使用
+	ifstream input;
 	int pos1, pos2, date;
 	string code, name, brand, type, condition, status, _date, reg;
 	input.open("camp_equipment.txt");
@@ -42,8 +43,9 @@ equipments fileHandler::creatEquipment(string equipmentID)
 	}
 }
 
-*User fileHandler::creatUser(string reg)
+User *fileHandler::creatUser(string reg)
 {
+	ifstream input;
 	string id, code, name, section, address, rank;
 	int birth, pos1, pos2;
 	code = reg.assign(reg, 0, 2);
@@ -56,7 +58,6 @@ equipments fileHandler::creatEquipment(string equipmentID)
 	birth = stoi(reg.assign(reg, pos2 + 1, pos1 - 1));
 	pos2 = reg.find("|", pos1 + 1);
 	address = reg.assign(reg, pos1 + 1, pos2 - 1);
-	
 	if (code == "VEN"||code == "ROV")
 	{
 		if (code == "VEN")
@@ -90,6 +91,7 @@ equipments fileHandler::creatEquipment(string equipmentID)
 
 void fileHandler::displayEquipmentList()
 {
+	ifstream input;
 	bool status = false, condition = false;
 	int counter = 0;
 	string reg;
@@ -133,6 +135,7 @@ void fileHandler::displayEquipmentList()
 
 bool fileHandler::login(string id, string password, User* user) const
 {
+	ifstream input;
 	int c1, c2;
 	string reg;
 	input.open(user.txt);
@@ -155,6 +158,7 @@ bool fileHandler::login(string id, string password, User* user) const
 			if (reg.assign(reg, c1 + 1, c2 - 1) == password)
 			{
 				user = creatUser(reg);
+				changeLoanStatus(user);
 				return true;
 			}
 			else
@@ -162,5 +166,38 @@ bool fileHandler::login(string id, string password, User* user) const
 				return false;
 			}
 		}
+	}
+}
+
+void fileHandler::changeLoanStatus(User* user)
+{
+	ifstream input;
+	string reg;
+	int pos1, pos2, counter;
+	input.open("loan_record.txt");
+	while (!eof(input))
+	{
+		do
+		{
+			getline(input, reg);
+		} while (reg.length() == 0);
+		pos1 = reg.find("|", 0);
+		pos2 = reg.find("|", pos1 + 1);
+		pos1 = reg.find("|", pos2 + 1);
+		pos2 = reg.find("|", pos1 + 1);
+		if (reg.assign(pos1 + 1, pos2 - 1) == user->getId())
+		{
+			cout << reg << endl;
+			counter++;
+		}
+	}
+	if (counter == 0)
+	{
+		user->setLoanStatus(false);
+	}
+	else
+	{
+		user->setLoanStatus(true);
+		user->setLoanNumber(counter);
 	}
 }

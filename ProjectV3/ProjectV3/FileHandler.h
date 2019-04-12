@@ -9,13 +9,12 @@
 
 class fileHandler 
 {
-private:
-	istream input;
 public:
 	equipments creatEquipment(string reg);
-	*User creatUser(string reg);
+	User *creatUser(string reg);
 	void displayEquipmentList();
 	bool login(string id, string password, User * user) const;
+	void changeLoanStatus(User* user);
 };
 
 #endif // !FILEHANDLER_H

@@ -1,10 +1,7 @@
 #include "LoanControl.h"
 
-bool loanControl::check(User* user, string equipmentID)
+bool loanControl::check(User* user, equipments* e)
 {
-	fileHandler fH;
-	equipments* e;
-	e = fH.creatEquipment(equipmentID);
 	if (user->getStatus()&&e->returnStatus())
 	{
 		return true;

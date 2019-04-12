@@ -29,13 +29,13 @@ int getMainMenu()
 
 int main()
 {
-	User user*;
+	User *user;
 	string id, password;
 	admin administrator();
 	fileHandler fH();
 	loanControl lC();
 	cout << "Welcome to camp equipments borrow system!" << endl;
-	while ()
+	while (true)
 	{
 		cout << "Please enter user ID: ";
 		cin >> id;
@@ -44,32 +44,34 @@ int main()
 		if (fH.login(id, password, user))
 		{
 			cout << "You're successfully logged in." << endl;
-			*user = fH.creatUser(userID);
-			switch (getMainMenu())
+			while (true)
 			{
-			case 1:
-				fH.displayEquipmentList();
-				break;
-			case 2:
-				administrator.displayLoanRecord(a);
-				break;
-			case 3:
-				administrator.makeLoan(a);
-				break;
-			case 4:
-				administrator.returnEquipment(a);
-				break;
-			case 5:
-				cout << "Thanks for using!" << endl;
-				break;
+				switch (getMainMenu())
+				{
+				case 1:
+					fH.displayEquipmentList();
+					break;
+				case 2:
+					administrator.displayLoanRecord(id);
+					break;
+				case 3:
+					administrator.makeLoan(user);
+					break;
+				case 4:
+					administrator.returnEquipment(user);
+					break;
+				case 5:
+					cout << "Thanks for using!" << endl;
+					system("pause");
+					return 0;
+					break;
+				}
 			}
-			break;
 		}
 		else
 		{
 			cout >> "Your account or password was entered incorrectly. Please try again.";
 		}
 	}
-	system("pause");
 	return 0;
 }

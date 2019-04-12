@@ -6,14 +6,15 @@
 #include <string>
 #include "Users.h"
 #include "LoanControl.h"
+#include "FileHandler.h"
 class admin
 {
-private:
-	istream input;
 public:
 	void displayLoanRecord(string userId);
-	void updateEquipmentCondition(string equipmentID, string status);
+	void updateEquipmentCondition(string eID, string status);
+	void updateLoanStatus(string eID, string status);
 	void makeLoan(User* user);
+	void returnEquipments(User* user);
 };
 
 #endif // !ADMIN_H 

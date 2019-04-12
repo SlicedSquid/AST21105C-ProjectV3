@@ -30,6 +30,16 @@ void User::setPassword(string password)
 	this->password = password;
 }
 
+void User::setLoanStatus(bool status)
+{
+	onLoan = status;
+}
+
+void User::setLoanNumber(int number)
+{
+	LoanNumber -= number;
+}
+
 
 int User::getDateOfBirth() {
 	return DateOfBirth;
@@ -66,19 +76,29 @@ Scout::Scout(){}
 
 bool Scout::getStatus()
 {
-	if (LoanNumber == 0)
-	{
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	return onLoan;
 }
 
 void Scout::borrowItem()
 {
 	LoanNumber--;
+	onLoan = true;
+}
+
+void Scout::returnItem()
+{
+	LoanNumber++;
+	if (LoanNumber == 3 && (rank == "Assistant Patrol Leader"|| rank == "Patrol Leader"))
+	{
+		onLoan = false;
+	}
+	else
+	{
+		if (LoanNumber == 1 && rankrank != "Assistant Patrol Leader" && rank != "Patrol Leader")
+		{
+			onLoan = false;
+		}
+	}
 }
 
 VentureScout::VentureScout(string Id, string Name, string Section, string Address, int DateOfBirth) {
@@ -95,19 +115,22 @@ VentureScout::VentureScout(){}
 
 bool VentureScout::getStatus()
 {
-	if (LoanNumber == 0)
-	{
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	return onLoan;
 }
 
 void VentureScout::borrowItem()
 {
 	LoanNumber--;
+	onLoan = true;
+}
+
+void VentureScout::returnItem()
+{
+	LoanNumber++;
+	if (LoanNumber == 3)
+	{
+		onLoan = false;
+	}
 }
 
 RoverScout::RoverScout(string Id, string Name, string Section, string Address, int DateOfBirth) {
@@ -138,6 +161,16 @@ bool RoverScout::getStatus()
 void RoverScout::borrowItem()
 {
 	LoanNumber--;
+	onLoan = true;
+}
+
+void RoverScout::returnItem()
+{
+	LoanNumber++;
+	if (LoanNumber == 5)
+	{
+		onLoan = false;
+	}
 }
 
 Scouter::Scouter(string Id, string Name, string Section, string Address, int DateOfBirth, string  _Rank) {
