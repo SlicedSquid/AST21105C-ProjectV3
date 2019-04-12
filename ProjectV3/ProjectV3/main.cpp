@@ -29,7 +29,7 @@ int getMainMenu()
 
 int main()
 {
-	User user* = new User;
+	User user*;
 	string id, password;
 	admin administrator();
 	fileHandler fH();
@@ -41,9 +41,7 @@ int main()
 		cin >> id;
 		cout << "Please enter password: ";
 		cin >> password;
-		user.setId(id);
-		user.setPassword(password);
-		if (fH.login(user))
+		if (fH.login(id, password, user))
 		{
 			cout << "You're successfully logged in." << endl;
 			*user = fH.creatUser(userID);

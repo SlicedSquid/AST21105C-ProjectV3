@@ -1,19 +1,19 @@
 #pragma once
-#include <iostream>
 #ifndef ADMIN_H 
 #define ADMIN_H
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "Users.h"
+#include "LoanControl.h"
 class admin
 {
 private:
-	string a;
-	string b;
-
+	istream input;
 public:
-	void displayAvailableEquipment() const;
-	void displayLoanRecord(users a) const;
-	void displaycampofequipment(user a) const;
-	void makeLoan(users a) const;
-	void returnEquipment(users a) const;
+	void displayLoanRecord(string userId);
+	void updateEquipmentCondition(string equipmentID, string status);
+	void makeLoan(User* user);
 };
 
 #endif // !ADMIN_H 

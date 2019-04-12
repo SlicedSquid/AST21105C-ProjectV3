@@ -60,11 +60,28 @@ Scout::Scout(string Id, string Name, string Section, string Address, int DateOfB
 		//only member can loan 1 item
 		LoanNumber = 1;
 	}
-	// reset loannumber
-	cout << "Loan Number is " << LoanNumber << endl;
 }
 
-VentureScout::VentureScout(string Id, string Name, string Section, string Address, int DateOfBirth, string  _Rank) {
+Scout::Scout(){}
+
+bool Scout::getStatus()
+{
+	if (LoanNumber == 0)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void Scout::borrowItem()
+{
+	LoanNumber--;
+}
+
+VentureScout::VentureScout(string Id, string Name, string Section, string Address, int DateOfBirth) {
 	this->Id = Id;
 	this->Name = Name;
 	this->Section = Section;
@@ -74,15 +91,53 @@ VentureScout::VentureScout(string Id, string Name, string Section, string Addres
 	cout << "Loan Number is " << LoanNumber << endl;
 }
 
-RoverScout::RoverScout(string Id, string Name, string Section, string Address, int DateOfBirth, string  _Rank) {
+VentureScout::VentureScout(){}
+
+bool VentureScout::getStatus()
+{
+	if (LoanNumber == 0)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void VentureScout::borrowItem()
+{
+	LoanNumber--;
+}
+
+RoverScout::RoverScout(string Id, string Name, string Section, string Address, int DateOfBirth) {
 	this->Id = Id;
 	this->Name = Name;
 	this->Section = Section;
 	this->Address = Address;
 	this->DateOfBirth = DateOfBirth;
 	LoanNumber = 5;
-	// reset loannumber
-	cout << "Loan Number is " << LoanNumber << endl;
+}
+
+RoverScout::RoverScout()
+{
+}
+
+bool RoverScout::getStatus()
+{
+	if (LoanNumber == 0)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void RoverScout::borrowItem()
+{
+	LoanNumber--;
 }
 
 Scouter::Scouter(string Id, string Name, string Section, string Address, int DateOfBirth, string  _Rank) {
@@ -92,6 +147,25 @@ Scouter::Scouter(string Id, string Name, string Section, string Address, int Dat
 	this->Address = Address;
 	this->DateOfBirth = DateOfBirth;
 	LoanNumber = 5;
-	// reset loannumber
-	cout << "Loan Number is " << LoanNumber << endl;
+}
+
+Scouter::Scouter()
+{
+}
+
+bool Scouter::getStatus()
+{
+	if (LoanNumber == 0)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+void Scouter::borrowItem()
+{
+	LoanNumber--;
 }

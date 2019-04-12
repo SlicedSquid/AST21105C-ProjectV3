@@ -1,51 +1,46 @@
-#include<string>
-#include <fstream>
-#include <iostream>
 #include "admin.h"
 using namespace std;
 
-void admin::displayAvailableEquipment() const
+void admin::displayLoanRecord(string userName)
 {
-
-}
-
-void admin::displayLoanRecord(users a) const
-{
-
-	ifstream myfile;
-	myfile.open("user.txt");
-	string a;
-
-	if (myfile.is_open())
+	string reg;
+	int pos1, pos2, counter;
+	input.open("loan.txt");
+	while (!eof(input))
 	{
-		while (getline(myfile, a))
+		do
 		{
-			cout << a << endl;
-
+			getline(input, reg);
+		} while (reg.length() == 0);
+		pos1 = reg.find("|", 0);
+		pos2 = reg.find("|", pos1 + 1);
+		pos1 = reg.find("|", pos2 + 1);
+		pos2 = reg.find("|", pos1 + 1);
+		if (reg.assign(pos1 + 1, pos2 - 1) == userName)
+		{
+			cout << reg << endl;
+			counter++;
 		}
-		cout << endl;
-		myfile.close();
 	}
-
-}
-
-void admin::makeLoan(users a) const
-{
-	ifstream file;
-	file.open("camp_equipment.txt");
-	string b;
-	if (file.is_open())
+	if (counter == 0)
 	{
-		while (getline(file, b))
-		{
-			cout << b << endl;
-		}
-		file.close();
+		cout << "No loan is made yet." << endl;
 	}
 }
 
-void admin::returnEquipment(users a) const
+void admin::makeLoan(User* user)
 {
+	loanControl lH;
+	string eID;
+	cout << "Please input the equipment ID(input -1 to last menu):" << endl;
+	cin >> eID;
+	if (eID != -1)
+	{
+		if (lH.check(user, eID);)
+		{
+			//可租借的情况下，更新用户以及物品的状态，写loan record
+			//如此看来这一个功能相当之难
+			user->borrowItem();//更新用户状态 是不需要txt文件的 但是剩下的两项需要
+		}
+	}
 }
-
-
