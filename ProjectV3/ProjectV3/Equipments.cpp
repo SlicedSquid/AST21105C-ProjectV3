@@ -13,6 +13,10 @@ equipments::equipments(string _code, string _name, string _brand, string _type, 
 	status = _status;
 }
 
+equipments::~equipments()
+{
+}
+
 void equipments::displayB()
 {
 	cout << code << "|" << name << "|" << brand << "|" << type << "|"

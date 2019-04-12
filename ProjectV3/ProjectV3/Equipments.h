@@ -16,6 +16,7 @@ private:
 public:
 	equipments(string _code, string _name, string _brand, string _type, 
 			   int _date, string _condition, string _status);
+	~equipments();
 	void displayB();				// Display basic information
 	virtual void displayA() = 0;	// Display attribute
 	bool returnStatus();
