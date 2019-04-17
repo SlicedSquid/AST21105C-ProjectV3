@@ -1,0 +1,44 @@
+T001|25th Jam Tent|Nikko|tent|02042014|good|in|4|dome|2|true|blue
+
+T002|25th Jam Tent|Nikko|tent|02042014|good|in|4|dome|2|true|blue
+
+T003|25th Jam Tent|Nikko|tent|02042014|good|out|4|dome|2|true|blue
+
+T004|Family Tent|LUXE|tent|12042008|damaged|in|4|wall|10|true|orange
+
+T005|4 Persons Dome|Jackal|tent|25092012|good|in|2|dome|1|true|yellow
+
+T006|4 Persons Dome|Jackal|tent|25092012|good|in|4|dome|1|true|yellow
+
+T007|4 Persons Dome|Jackal|tent|25092012|disposed|in|4|dome|2|true|yellow
+
+T008|Ultralight Pack|Jackal|tent|14072014|good|in|2|lightweight|1|true|grey
+
+T009|Ultralight Pack|LUXE|tent|14072014|good|in|4|lightweight|1|true|red
+
+T010|Tunnel Tent|Camp Mark|tent|14072014|good|in|6|lightweight|1|true|grey
+
+S001|Camp Stove|MSR|stove|04042015|good|in|lightweight|stove gas
+
+S002|Camp Stove|MSR|stove|04042015|good|in|lightweight|stove gas
+
+S003|Camp Stove|MSR|stove|04042015|good|in|lightweight|gasoline
+S004|Camp Stove|MSR|stove|04042015|good|in|lightweight|gasoline
+
+S005|Handy Stove|SeaToSubmit|stove|02042016|being repaired|out|ultralight|screw headed gas
+
+S006|Handy Stove|SeaToSubmit|stove|02042016|good|out|ultralight|screw headed gas
+
+S007|Alchohol Stove|Alocs|stove|01032017|good|out|ultralight|wax
+
+S008|Alchohol Stove|Alocs|stove|01032017|good|in|ultralight|wax
+L001|Head Gear Lamp|Black Diamond|lantern|24122018|good|in|hiking|head lamp|AAA batteries
+
+L002|Head Gear Lamp|Black Diamond|lantern|24122018|good|in|hiking|head lamp|AAA batteries
+
+L003|Moji Lantern|Black Diamond|lantern|06062017|good|out|camping|led lamp|AA batteries
+
+L004|Moji Lantern|Black Diamond|lantern|06062017|good|out|camping|led lamp|AA batteries
+
+L005|Cardinol Navigator|Black Diamond|lantern|06062017|good|in|camping|beam lamp|C batteries
+L006|Tall Beam Lamp|XXX|lantern|04062016|good|in|camping|beam lamp|D batteries
